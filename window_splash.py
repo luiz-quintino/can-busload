@@ -50,11 +50,11 @@ class Splash(tk.Toplevel):
 
     def _frame_about(self):
         # LABEL
-        tk.Label(self, text='Busload Calc 2020').grid(row=0, column=0, padx=150, pady=30, stick='we')
-        tk.Label(self, text='Version 2.1.2')      .grid(row=1, column=0, padx=150, pady=10, stick='we')
-        tk.Label(self, text='THIS SOFTWARE IS FOR FREE USAGE').grid(row=2, column=0, padx=150, pady=30, stick='we')
-        tk.Label(self, text='by Luiz Quintino') .grid(row=3, column=0, padx=150, pady=10, stick='we')
-        tk.Label(self, text='luiz.quintino@gmail.com') .grid(row=4, column=0, padx=150, pady=30, stick='we')
+        tk.Label(self, text='Licence: ' + Const.__copyright__).grid(row=0, column=0, padx=150, pady=30, stick='we')
+        tk.Label(self, text='Version ' + Const.__version__)      .grid(row=1, column=0, padx=150, pady=10, stick='we')
+        tk.Label(self, text='THIS SOFTWARE IS FOR FREE USAGE under ' + Const.__license__).grid(row=2, column=0, padx=150, pady=30, stick='we')
+        tk.Label(self, text='by ' + Const.__author__) .grid(row=3, column=0, padx=150, pady=10, stick='we')
+        tk.Label(self, text='email: ' + Const.__email__ ) .grid(row=4, column=0, padx=150, pady=30, stick='we')
 
     def _frame_tutorial(self):
         # CONFIGURE

@@ -33,7 +33,7 @@ class ModifyList(tk.Frame):
         self.txtSize.set('8')
 
         msg = ['Click in a message to select it to be modified',
-               'The Auto set values checked will automatically modify the value of the message',
+               'The [Auto set values] checked will automatically modify the value of the message',
                'Click on a message in the Selected list to remove it',
                'The pencil icon means the message on DBC is selected to be modified']
         self.child.status_bar_list(msg)

@@ -18,7 +18,7 @@ class Main(tk.Tk):
     def __init__(self):
         # CREATE MAIN WINDOW
         tk.Tk.__init__(self)
-        self.title("Busload Calc 2.1")
+        self.title("Busload Calc " + Const.__version__)
         self.option_add('*tearOff', False)
         self.geometry('900x600')
         self.minsize(480, 600)
@@ -66,7 +66,10 @@ class Main(tk.Tk):
     def _is_valide_init_config(self, config):
         if config:
             if 'version' in config.keys():
-                if config['version'] == "2.1":
+                config_version = config['version'].split('.')
+                version = Const.__version__.split('.')
+                if int(config_version[0])*10 + int(config_version[1]) >= 21:
+                    # The config file over 2.1 has particular features not compatible with 2.0
                     return True
         return False
 
@@ -80,7 +83,7 @@ class Main(tk.Tk):
 
         config = {
             "Busload Calc configuration": "2020",
-            "version": "2.1",
+            "version": Const.__version__[:-2],
             "responsible": "@Responsible name",
             "index_title": 0,
             "index_side_title": 0,

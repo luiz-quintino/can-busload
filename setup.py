@@ -8,7 +8,7 @@ python setup build
 
 '''
 
-ver = '2.1.2'
+ver = '2.2.0'
 
 build_exe_options = {
 	'excludes': [],
@@ -33,7 +33,7 @@ exe = Executable(
     base=base_os,
 	targetName='Busload Calc.exe',
 	icon='img/busloadcalc.ico',
-	shortcutDir = 'short Folder'
+	shortcutDir ='short Folder'
 )
 
 setup(
@@ -42,6 +42,6 @@ setup(
 	description='Busload calculation from a .dbc file',
 	author='Luiz Quintino',
 	author_email='luiz.quintino@gmail.com',
-	executables = [exe],
-	options= {'build_exe': build_exe_options},
+	executables=[exe],
+	options={'build_exe': build_exe_options},
 	)

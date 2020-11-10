@@ -59,8 +59,8 @@ class EraseList(tk.Frame):
             self._update_list_frame_ecu(child)
             msg = ['Click on the ECU in the list to select it to delete',
                    'Click on the selected ECU to remove it from the list',
-                   'Blue garbage means only message sent by that module will be deleted'
-                   'Red garbage or "*" means all messages from that module will be deleted',
+                   'Blue garbage means only messages EXCLUSIVELY sent by that module will be deleted'
+                   'Red garbage or "*" means ALL messages from that module will be deleted',
                    'Use right mouse button to see the list of messages sent by the ECU']
         else:
             self._update_list_frame_msg(child)
@@ -128,14 +128,14 @@ class EraseList(tk.Frame):
             self.lbl_items_list[i].grid(column=1, row=i, sticky='W')
 
             if child.dbc.nodes[i].name + '*' in child.cnf['erase_ecu']:
-                self.lbl_fig_lst[i] = tk.Label(self.frame, image=self.img[Const.IMG_GARBAGE_BLUE])
-                self.lbl_fig_lst[i].image = self.img[Const.IMG_GARBAGE_BLUE]
+                self.lbl_fig_lst[i] = tk.Label(self.frame, image=self.img[Const.IMG_GARBAGE_RED])
+                self.lbl_fig_lst[i].image = self.img[Const.IMG_GARBAGE_RED]
                 self.lbl_fig_lst[i].grid(column=0, row=i, sticky='nswe')
                 # create list of messages selected
                 self.sel_items.append(child.dbc.nodes[i].name + '*')
             elif child.dbc.nodes[i].name in child.cnf['erase_ecu']:
-                self.lbl_fig_lst[i] = tk.Label(self.frame, image=self.img[Const.IMG_GARBAGE_RED])
-                self.lbl_fig_lst[i].image = self.img[Const.IMG_GARBAGE_RED]
+                self.lbl_fig_lst[i] = tk.Label(self.frame, image=self.img[Const.IMG_GARBAGE_BLUE])
+                self.lbl_fig_lst[i].image = self.img[Const.IMG_GARBAGE_BLUE]
                 self.lbl_fig_lst[i].grid(column=0, row=i, sticky='nswe')
                 # create list of messages selected
                 self.sel_items.append(child.dbc.nodes[i].name)

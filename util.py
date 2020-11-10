@@ -652,8 +652,11 @@ def apply_config(config):
 
     for out in messages:
         for each in config.cnf['erase_ecu']:
-            all_mgs = True if each[-1] == '*' else False
-
+            if each[-1] == '*':
+                all_mgs = True
+                each = each[:-1]
+            else:
+                all_mgs = False
             if each in out.senders:
                 if all_mgs or len(out.senders) == 1:
                     config.erase_message.append(out.name)
@@ -673,6 +676,7 @@ def apply_config(config):
         for out in messages:
             if out.name == msg:
                 event_log('[r]:message %s removed from dbc' % msg, config)
+                config.erase_message.append(out.name)
                 found = True
                 break
         if not found:
@@ -692,7 +696,7 @@ def apply_config(config):
                     out.name, out.size, val[0], out.cycle, val[1]), config)
 
                 config.erase_message.append(out.name)
-                b = message_out.MessageOut(out.name, out.id, int(val[0]), int(val[1]))
+                b = message_out.MessageOut(out.name + '_edited', out.id, int(val[0]), int(val[1]))
                 messages.append(b)
                 break
 

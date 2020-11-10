@@ -1,3 +1,12 @@
+__author__ = "Luiz Quintino"
+__copyright__ = "Copyright 2020, Busload Calc"
+__credits__ = ["Luiz Quintino"]
+__license__ = "GPL"
+__version__ = "2.2.0"
+__maintainer__ = "Luiz Quintino"
+__email__ = "luiz.quintino@gmail.com"
+__status__ = "Production"
+
 BUSLOAD_INIT = 'busloadcalc.ini'
 MENU_NEW_CONFIG = 1
 MENU_OPEN_FILE = 2
@@ -63,8 +72,8 @@ WDW_TUTORIAL = 3
 WDW_TITLE = [
     'Bulsload Calc',
     'About Busload Calc',
-    'Welcome to Busload Calc 2.1',
-    'Tutorial Busload Calc 2.1'
+    'Welcome to Busload Calc ',
+    'Tutorial Busload Calc '
 ]
 
 SB_ERASE_MGS = 0
